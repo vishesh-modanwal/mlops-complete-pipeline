@@ -1,0 +1,14 @@
+1. Create a GitHub repo and clone it in local (Add experiments)
+2. Add SRC folder along with all components (run them individually)
+3. Add data models report directory .gitignore file 
+4. now git add, commit, post
+
+'
+logging level 
+1. debug 
+2. info
+3. warning
+4. error
+5. critical
+
+'
