@@ -97,14 +97,16 @@ def save_data(df: pd.DataFrame, file_path: str) -> None:
 
 def main():
     try:
-        max_features = 50
+        # max_features = 50
+        params = load_params(params_path="params.yaml")
+        max_features = params['feature_engineering']['max_features']
 
         interim_data_path = os.path.join(project_root, 'data', 'interim')
         train_data = load_data(os.path.join(interim_data_path, 'train_processed.csv'))
         test_data = load_data(os.path.join(interim_data_path, 'test_processed.csv'))
 
         train_df, test_df = apply_tfidf(train_data, test_data, max_features)
-
+ 
         processed_data_path = os.path.join(project_root, 'data', 'processed')
         save_data(train_df, os.path.join(processed_data_path, "train_tfidf.csv"))
         save_data(test_df, os.path.join(processed_data_path, "test_tfidf.csv"))
